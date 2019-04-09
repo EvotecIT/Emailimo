@@ -18,7 +18,7 @@ ModuleVersion = '0.0.1'
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = '62f9bfb9-65bd-4cf6-9c8c-5aab3f25c315'
+GUID = 'ff6afe94-9575-4e3c-b9da-140c614e5daa'
 
 # Author of this module
 Author = 'Przemyslaw Klys'
@@ -69,10 +69,10 @@ RequiredModules = @('PSSharedGoods')
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Email', 'EmailAttachment', 'EmailBCC', 'EmailBody', 'EmailCC', 'EmailFrom', 
-               'EmailHeader', 'EmailHeading', 'EmailHTML', 'EmailList', 'EmailListItem', 
-               'EmailOptions', 'EmailCC', 'EmailServer', 'EmailSubject', 'EmailTable', 
-               'EmailText', 'EmailTo'
+FunctionsToExport = 'EmailHeading', 'EmailHTML', 'EmailList', 'EmailListItem', 'EmailTable', 
+               'EmailText', 'EmailAttachment', 'EmailBCC', 'EmailCC', 'EmailFrom', 
+               'EmailOptions', 'EmailCC', 'EmailServer', 'EmailSubject', 'EmailTo', 
+               'Email', 'EmailBody', 'EmailHeader'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
