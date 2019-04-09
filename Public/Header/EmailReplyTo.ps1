@@ -1,4 +1,4 @@
-function EmailCC {
+function EmailReplyTo {
     [CmdletBinding()]
     param(
         [string] $Address
