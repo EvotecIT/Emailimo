@@ -1,4 +1,5 @@
 function EmailTo {
+    [CmdletBinding()]
     param(
         [string[]] $Addresses
     )

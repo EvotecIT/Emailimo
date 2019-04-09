@@ -1,4 +1,5 @@
 function EmailSubject {
+    [CmdletBinding()]
     param(
         [string] $Subject
     )

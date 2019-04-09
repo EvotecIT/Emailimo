@@ -1,4 +1,5 @@
 function EmailText {
+    [CmdletBinding()]
     param(
         [Parameter(Mandatory = $false, Position = 0)][ScriptBlock] $TextBlock,
         [string[]] $Text,
@@ -22,22 +23,21 @@ function EmailText {
         }
     }
 
-    [PSCustomObject] @{
-        Type = 'EmailText'
-        Data = [ordered] @{
-            Alignment       = $Alignment
-            FontSize        = $FontSize
-            TextTransform   = $TextTransform
-            Text            = $Text
-            Color           = $Color
-            FontFamily      = $FontFamily
-            Direction       = $Direction
-            FontStyle       = $FontStyle
-            TextDecoration  = $TextDecoration
-            BackGroundColor = $BackGroundColor
-            FontVariant     = $FontVariant
-            FontWeight      = $FontWeight
-            BreakAfterLine  = $LineBreak
-        }
+    $newHTMLTextSplat = @{
+        Alignment       = $Alignment
+        FontSize        = $FontSize
+        TextTransform   = $TextTransform
+        Text            = $Text
+        Color           = $Color
+        FontFamily      = $FontFamily
+        Direction       = $Direction
+        FontStyle       = $FontStyle
+        TextDecoration  = $TextDecoration
+        BackGroundColor = $BackGroundColor
+        FontVariant     = $FontVariant
+        FontWeight      = $FontWeight
+        BreakAfterLine  = $LineBreak
     }
+
+    New-HTMLText @newHTMLTextSplat
 }

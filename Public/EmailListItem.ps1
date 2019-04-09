@@ -1,4 +1,5 @@
 function EmailListItem {
+    [CmdletBinding()]
     param(
         [string] $Text
     )

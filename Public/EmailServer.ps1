@@ -1,4 +1,5 @@
 function EmailServer {
+    [CmdletBinding()]
     param(
         [string] $Server,
         [int] $Port = 587,

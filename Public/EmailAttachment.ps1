@@ -1,4 +1,5 @@
 function EmailAttachment {
+    [CmdletBinding()]
     param(
         [string[]] $FilePath
     )

@@ -1,4 +1,5 @@
 function EmailBCC {
+    [CmdletBinding()]
     param(
         [string[]] $Addresses
     )

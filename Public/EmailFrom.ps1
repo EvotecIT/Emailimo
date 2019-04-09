@@ -1,4 +1,5 @@
 function EmailFrom {
+    [CmdletBinding()]
     param(
         [string] $Address
     )

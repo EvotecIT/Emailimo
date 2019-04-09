@@ -1,10 +1,10 @@
 function EmailList {
+    [CmdletBinding()]
     param(
         [ScriptBlock]$ListItems,
         [ValidateSet('Unordered', 'Ordered')] [string] $Type = 'Unordered'
     )
-    [PSCustomObject] @{
-        Type = 'EmailHTML'
-
-}
+    New-HTMLList -Type $Type {
+        Invoke-Command -ScriptBlock $ListItems
+    }
 }

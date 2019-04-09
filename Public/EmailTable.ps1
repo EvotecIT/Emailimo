@@ -1,13 +1,7 @@
 function EmailTable {
+    [CmdletBinding()]
     param(
         $Table
     )
-
-
-    [PSCustomObject] @{
-        Type = 'EmailTable'
-        Data = [ordered] @{
-            DataTable = $Table
-        }
-    }
+    New-HTMLTable -DataTable $Table
 }

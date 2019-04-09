@@ -1,9 +1,7 @@
 function EmailHTML {
+    [CmdletBinding()]
     param(
         [ScriptBlock] $HTML
     )
-    [PSCustomObject] @{
-        Type = 'EmailHTML'
-        HTML = Invoke-Command -ScriptBlock $HTML
-    }
+    Invoke-Command -ScriptBlock $HTML
 }
