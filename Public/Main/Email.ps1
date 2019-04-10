@@ -62,6 +62,9 @@ function Email {
                 HeaderReplyTo {
                     $ServerParameters.ReplyTo = $Parameter.Address
                 }
+                HeaderSubject {
+                    $ServerParameters.Subject = $Parameter.Subject
+                }
                 HeaderServer {
                     $ServerParameters.Server = $Parameter.Server
                     $ServerParameters.Port = $Parameter.Port
