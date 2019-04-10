@@ -40,6 +40,7 @@ function Email {
         Priority              = $Priority
         DeliveryNotifications = $DeliveryNotifications
     }
+    $Attachments = [System.Collections.Generic.List[string]]::new()
     $Body = New-HTML -UseCssLinks -UseJavaScriptLinks {
         [Array] $EmailParameters = Invoke-Command -ScriptBlock $Email
 
@@ -63,15 +64,15 @@ function Email {
                 }
                 HeaderServer {
                     $ServerParameters.Server = $Parameter.Server
+                    $ServerParameters.Port = $Parameter.Port
                     $ServerParameters.Login = $Parameter.UserName
                     $ServerParameters.Password = $Parameter.Password
-                    $ServerParameters.Port = $Parameter.Port
+                    $ServerParameters.PasswordFromFile = $Parameter.PasswordFromFile
+                    $ServerParameters.PasswordAsSecure = $Parameter.PasswordAsSecure
                     $ServerParameters.EnableSSL = $Parameter.SSL
-                    $ServerParameters.PasswordFromFile = $false
-                    $ServerParameters.PasswordAsSecure = $false
                 }
                 HeaderAttachment {
-                    #$ServerParameters.EmailTo = $Parameter.Addresses
+                    $Attachments.Add($Parameter.FilePath)
                 }
                 HeaderOptions {
                     $ServerParameters.DeliveryNotifications = $Parameter.DeliveryNotifications
@@ -89,6 +90,6 @@ function Email {
     }
     $MailSentTo = "To: $($ServerParameters.To -join ', '); CC: $($ServerParameters.CC -join ', '); BCC: $($ServerParameters.BCC -join ', ')".Trim()
     if ($pscmdlet.ShouldProcess("$MailSentTo", "Email")) {
-        Send-Email -EmailParameters $ServerParameters -Body ($Body -join '') -Verbose
+        Send-Email -EmailParameters $ServerParameters -Body ($Body -join '') -Attachment $Attachments -Verbose
     }
 }
