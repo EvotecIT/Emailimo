@@ -13,7 +13,7 @@ function EmailListItem {
         [ValidateSet('none', 'line-through', 'overline', 'underline')][string[]] $TextDecoration = @(),
         [ValidateSet('uppercase', 'lowercase', 'capitalize')][string[]] $TextTransform = @(),
         [ValidateSet('rtl')][string[]] $Direction = @(),
-        [switch] $BreakAfterLine
+        [switch] $LineBreak
     )
 
     $newHTMLTextSplat = @{
@@ -29,7 +29,7 @@ function EmailListItem {
         BackGroundColor = $BackGroundColor
         FontVariant     = $FontVariant
         FontWeight      = $FontWeight
-        BreakAfterLine  = $LineBreak
+        LineBreak       = $LineBreak
     }
 
     New-HTMLListItem @newHTMLTextSplat

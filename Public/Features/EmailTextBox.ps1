@@ -1,8 +1,7 @@
-function EmailText {
+function EmailTextBox {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $false, Position = 0)][ScriptBlock] $TextBlock,
-        [string[]] $Text,
         [RGBColors[]] $Color = @(),
         [RGBColors[]] $BackGroundColor = @(),
         [alias('Size')][int[]] $FontSize = @(),
@@ -22,24 +21,22 @@ function EmailText {
             $LineBreak = $true
         }
     }
-
-    $newHTMLTextSplat = @{
-        Alignment       = $Alignment
-        FontSize        = $FontSize
-        TextTransform   = $TextTransform
-        Text            = $Text
-        Color           = $Color
-        FontFamily      = $FontFamily
-        Direction       = $Direction
-        FontStyle       = $FontStyle
-        TextDecoration  = $TextDecoration
-        BackGroundColor = $BackGroundColor
-        FontVariant     = $FontVariant
-        FontWeight      = $FontWeight
-        LineBreak       = $LineBreak
+    foreach ($T in $Text) {
+        $newHTMLTextSplat = @{
+            Alignment       = $Alignment
+            FontSize        = $FontSize
+            TextTransform   = $TextTransform
+            Text            = $T
+            Color           = $Color
+            FontFamily      = $FontFamily
+            Direction       = $Direction
+            FontStyle       = $FontStyle
+            TextDecoration  = $TextDecoration
+            BackGroundColor = $BackGroundColor
+            FontVariant     = $FontVariant
+            FontWeight      = $FontWeight
+            LineBreak       = $LineBreak
+        }
+        New-HTMLText @newHTMLTextSplat
     }
-
-    # $newHTMLTextSplat | fv
-
-    New-HTMLText @newHTMLTextSplat
 }
