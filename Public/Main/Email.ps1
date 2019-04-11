@@ -8,7 +8,8 @@ function Email {
         [string] $ReplyTo,
         [string] $From,
         [string] $Subject,
-        [switch] $AttachSelf,
+        [alias('SelfAttach')][switch] $AttachSelf,
+        [string] $AttachSelfName,
         [string] $Server,
         [string] $Username,
         [int] $Port = 587,
@@ -19,8 +20,10 @@ function Email {
         [ValidateSet('Low', 'Normal', 'High')] [string] $Priority = 'Normal',
         [ValidateSet('None', 'OnSuccess', 'OnFailure', 'Delay', 'Never')] $DeliveryNotifications = 'None',
         [string] $Encoding = 'Unicode',
-        [string] $FilePath
+        [string] $FilePath,
+        [bool] $Supress = $true
     )
+    $StartTime = Start-TimeLog
     $ServerParameters = [ordered] @{
         From                  = $From
         To                    = $To
@@ -91,8 +94,25 @@ function Email {
     if ($FilePath) {
         Save-HTML -FilePath $FilePath -HTML $Body
     }
+    if ($AttachSelf) {
+        if ($AttachSelfName) {
+            $TempFilePath = "$(Get-TemporaryDirectory)\$($AttachSelfName).html"
+        } else {
+            $TempFilePath = ''
+        }
+        $Saved = Save-HTML -FilePath $TempFilePath -HTML $Body -Supress $false
+        if ($Saved) {
+            $Attachments.Add($Saved)
+        }
+    }
+
     $MailSentTo = "To: $($ServerParameters.To -join ', '); CC: $($ServerParameters.CC -join ', '); BCC: $($ServerParameters.BCC -join ', ')".Trim()
     if ($pscmdlet.ShouldProcess("$MailSentTo", "Email")) {
-        Send-Email -EmailParameters $ServerParameters -Body ($Body -join '') -Attachment $Attachments -Verbose
+        $EmailOutput = Send-Email -EmailParameters $ServerParameters -Body ($Body -join '') -Attachment $Attachments -Verbose
+        if (-not $Supress) {
+            $EmailOutput
+        }
     }
+    $EndTime = Stop-TimeLog -Time $StartTime -Option OneLiner
+    Write-Verbose "Email - Time to send: $EndTime"
 }

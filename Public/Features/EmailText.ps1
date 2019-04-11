@@ -14,13 +14,14 @@ function EmailText {
         [ValidateSet('left', 'center', 'right', 'justify')][string[]] $Alignment = @(),
         [ValidateSet('uppercase', 'lowercase', 'capitalize')][string[]] $TextTransform = @(),
         [ValidateSet('rtl')][string[]] $Direction = @(),
-        [switch] $LineBreak
+        [switch] $LineBreak,
+        [switch] $SkipParagraph
     )
     if ($TextBlock) {
         $Text = (Invoke-Command -ScriptBlock $TextBlock)
-        if ($Text.Count) {
-            $LineBreak = $true
-        }
+        #if ($Text.Count) {
+        #    $LineBreak = $false
+        #}
     }
 
     $newHTMLTextSplat = @{
@@ -37,9 +38,8 @@ function EmailText {
         FontVariant     = $FontVariant
         FontWeight      = $FontWeight
         LineBreak       = $LineBreak
+        SkipParagraph   = $SkipParagraph
     }
-
-    # $newHTMLTextSplat | fv
 
     New-HTMLText @newHTMLTextSplat
 }

@@ -37,6 +37,6 @@ function EmailTextBox {
             FontWeight      = $FontWeight
             LineBreak       = $LineBreak
         }
-        New-HTMLText @newHTMLTextSplat
+        New-HTMLText @newHTMLTextSplat -SkipParagraph
     }
 }
