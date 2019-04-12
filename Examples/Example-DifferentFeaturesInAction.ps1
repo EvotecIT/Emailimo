@@ -1,4 +1,4 @@
-Import-Module PSWriteHTML -Force
+﻿Import-Module PSWriteHTML -Force
 Import-Module Emailimo -Force
 
 if ($null -eq $Table) {
