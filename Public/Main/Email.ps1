@@ -108,7 +108,7 @@ function Email {
 
     $MailSentTo = "To: $($ServerParameters.To -join ', '); CC: $($ServerParameters.CC -join ', '); BCC: $($ServerParameters.BCC -join ', ')".Trim()
     if ($pscmdlet.ShouldProcess("$MailSentTo", "Email")) {
-        $EmailOutput = Send-Email -EmailParameters $ServerParameters -Body ($Body -join '') -Attachment $Attachments -Verbose
+        $EmailOutput = Send-Email -EmailParameters $ServerParameters -Body ($Body -join '') -Attachment $Attachments
         if (-not $Supress) {
             $EmailOutput
         }
