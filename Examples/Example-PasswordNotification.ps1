@@ -9,8 +9,8 @@ $PasswordExpiryDays = 5
 
 Email -WhatIf {
     EmailHeader {
-        EmailFrom -Address 'reminder@euvic.pl'
-        EmailTo -Addresses "przemyslaw.klys@evotec.pl"
+        EmailFrom -Address 'reminder@domain.pl'
+        EmailTo -Addresses "przemyslaw.klys@domain.pl"
         EmailServer -Server 'mail.evotec.com' -UserName 'YourUsername' -Password 'C:\Support\Important\Password-Evotec-Reminder.txt' -PasswordAsSecure -PasswordFromFile
         EmailOptions -Priority High -DeliveryNotifications Never
         EmailSubject -Subject 'This is a test email'
