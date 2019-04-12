@@ -108,14 +108,14 @@ Email -AttachSelf -AttachSelfName 'My report' {
         }
         EmailText -LineBreak
         EmailTextBox -FontFamily 'Calibri' -Size 15 {
-            "This is some text that's preformatted with Emoji đ¤ˇ âď¸"
+            "This is some text that's preformatted with Emoji 🤷 ‍️"
             "Adding more text, notice ths should be on next line"
             ""
             "Empty line above will cause a blank space. If you want to continue writting like you would do in normal email please use here strings as seen below."
             @"
-                This is tricky but it works like one â¤
+                This is tricky but it works like one ❤
                 big line... even thou we've split this over few lines
-                already this will be one continues line. Get it right? đ
+                already this will be one continues line. Get it right? 😎
 "@
             ""
         }
@@ -123,7 +123,7 @@ Email -AttachSelf -AttachSelfName 'My report' {
         EmailTextBox -FontSize 15 -Color DarkCyan -FontStyle italic {
             ""
             @"
-                This is tricky đ but it works like one
+                This is tricky 😁 but it works like one
                 big line... even thou we've split this over few lines
                 already this will be one continues line. Get it right?
                 Notice how I gave it color and made it font size 15.
