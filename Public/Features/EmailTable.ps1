@@ -1,7 +1,7 @@
 function EmailTable {
     [CmdletBinding()]
     param(
-        [Parameter(Mandatory = $false, Position = 0)][ScriptBlock] $ConditionalFormatting,
+        [Parameter(Mandatory = $false, Position = 0)][ScriptBlock] $HTML,
         [alias('Table')][Array] $DataTable,
         [string[]][ValidateSet('copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5')] $Buttons = @('copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5'),
         [string[]][ValidateSet('numbers', 'simple', 'simple_numbers', 'full', 'full_numbers', 'first_last_numbers')] $PagingStyle = 'full_numbers',
@@ -36,7 +36,7 @@ function EmailTable {
         -DisablePaging:$DisablePaging -DisableOrdering:$DisableOrdering -DisableInfo:$DisableInfo -DisableColumnReorder:$DisableColumnReorder -DisableProcessing:$DisableProcessing `
         -DisableResponsiveTable:$DisableResponsiveTable -DisableSelect:$DisableSelect -DisableStateSave:$DisableStateSave -DisableSearch:$DisableSearch -ScrollCollapse:$ScrollCollapse `
         -Style $Style -TextWhenNoData:$TextWhenNoData -ScreenSizePercent $ScreenSizePercent `
-        -ConditionalFormatting $ConditionalFormatting `
+        -HTML $HTML `
         -DefaultSortColumn $DefaultSortColumn -DefaultSortIndex $DefaultSortIndex -DefaultSortOrder $DefaultSortOrder `
         -Find $Find -OrderMulti:$OrderMulti `
         -Filtering:$Filtering -FilteringLocation $FilteringLocation `
