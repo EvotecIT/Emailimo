@@ -4,7 +4,14 @@
 
 ### Changelog
 
-- 0.0.1 - 12.04.2019 - First public release
+- 0.0.6 - 2019.06.02
+  - Fix for EmailListItem for multiple texts
+
+- 0.0.2 to 0.0.5
+  - Something important but forgot what
+
+- 0.0.1 - 2019.04.12
+  - First public release
   - Overview: https://evotec.xyz/meet-emailimo-new-way-to-send-pretty-emails-with-powershell/
 
 
