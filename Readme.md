@@ -4,6 +4,9 @@
 
 ### Changelog
 
+- 0.0.7 - 2019.06.17
+  - Support for new PSWriteHTML
+
 - 0.0.6 - 2019.06.02
   - Fix for EmailListItem for multiple texts
 
