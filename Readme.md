@@ -1,3 +1,22 @@
+<p align="center">
+  <a href="https://www.powershellgallery.com/packages/Emailimo"><img src="https://img.shields.io/powershellgallery/v/Emailimo.svg"></a>
+  <a href="https://www.powershellgallery.com/packages/Emailimo"><img src="https://img.shields.io/powershellgallery/vpre/Emailimo.svg?label=powershell%20gallery%20preview&colorB=yellow"></a>
+  <a href="https://github.com/EvotecIT/Emailimo"><img src="https://img.shields.io/github/license/EvotecIT/Emailimo.svg"></a>
+</p>
+
+<p align="center">
+  <a href="https://www.powershellgallery.com/packages/Emailimo"><img src="https://img.shields.io/powershellgallery/p/Emailimo.svg"></a>
+  <a href="https://github.com/EvotecIT/Emailimo"><img src="https://img.shields.io/github/languages/top/evotecit/Emailimo.svg"></a>
+  <a href="https://github.com/EvotecIT/Emailimo"><img src="https://img.shields.io/github/languages/code-size/evotecit/Emailimo.svg"></a>
+  <a href="https://github.com/EvotecIT/Emailimo"><img src="https://img.shields.io/powershellgallery/dt/Emailimo.svg"></a>
+</p>
+
+<p align="center">
+  <a href="https://twitter.com/PrzemyslawKlys"><img src="https://img.shields.io/twitter/follow/PrzemyslawKlys.svg?label=Twitter%20%40PrzemyslawKlys&style=social"></a>
+  <a href="https://evotec.xyz/hub"><img src="https://img.shields.io/badge/Blog-evotec.xyz-2A6496.svg"></a>
+  <a href="https://www.linkedin.com/in/pklys"><img src="https://img.shields.io/badge/LinkedIn-pklys-0077B5.svg?logo=LinkedIn"></a>
+</p>
+
 # Emailimo - PowerShell Module
 
 **Emailimo** is simplified **PowerShell** module allowing to send emails using english like syntax. It provides easy to use commands that allow you to sort of tyupe your email like you would in Outlook (to some extent - it's still **PowerShell** you know!). Emailimo is based on [PSWriteHTML](https://github.com/EvotecIT/PSWriteHTML).
