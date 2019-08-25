@@ -23,6 +23,12 @@
 
 ### Changelog
 
+- 0.0.9 - 2019.08.25
+  - Support for new PSWriteHTML
+
+- 0.0.8 - 2019.08.11
+  - Support for new PSWriteHTML
+
 - 0.0.7 - 2019.06.17
   - Support for new PSWriteHTML
 
