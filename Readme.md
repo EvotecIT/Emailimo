@@ -21,8 +21,10 @@
 
 **Emailimo** is simplified **PowerShell** module allowing to send emails using english like syntax. It provides easy to use commands that allow you to sort of tyupe your email like you would in Outlook (to some extent - it's still **PowerShell** you know!). Emailimo is based on [PSWriteHTML](https://github.com/EvotecIT/PSWriteHTML).
 
-### Changelog
+## Changelog
 
+- 0.0.10 - 2019.10.28
+  - Fix for EmailAttachment
 - 0.0.9 - 2019.08.25
   - Support for new PSWriteHTML
 
@@ -42,10 +44,9 @@
   - First public release
   - Overview: https://evotec.xyz/meet-emailimo-new-way-to-send-pretty-emails-with-powershell/
 
+### Example 1
 
-#### Example 1
-
-```
+```powershell
 Email -WhatIf {
     EmailHeader {
         EmailFrom -Address 'reminder@domain.pl'
@@ -79,10 +80,9 @@ Email -WhatIf {
 
 ![Example 1](https://evotec.xyz/wp-content/uploads/2019/04/img_5cafac409c12b.png)
 
+### Example 2
 
-#### Example 2
-
-```
+```powershell
 Email -WhatIf {
     EmailHeader {
         EmailFrom -Address 'reminder@domain.pl'
@@ -116,9 +116,9 @@ Email -WhatIf {
 
 ![Example 2](https://evotec.xyz/wp-content/uploads/2019/04/img_5cafaf30eaed5.png)
 
-#### Example 3
+### Example 3
 
-```
+```powershell
 if ($null -eq $Table) {
     $Table = (Get-Process | Select-Object -First 5 -Property Name, BasePriority, Company, CompanyName)
 }

@@ -47,7 +47,6 @@ function Email {
     $Body = New-HTML -UseCssLinks -UseJavaScriptLinks {
         [Array] $EmailParameters = Invoke-Command -ScriptBlock $Email
 
-        #New-HTML -FilePath 'C:\Users\przemyslaw.klys\OneDrive - Evotec\Support\GitHub\Emailimo\Examples\Temp.html' -UseCssLinks -UseJavaScriptLinks {
         foreach ($Parameter in $EmailParameters) {
             switch ( $Parameter.Type ) {
                 HeaderTo {
@@ -78,7 +77,9 @@ function Email {
                     $ServerParameters.EnableSSL = $Parameter.SSL
                 }
                 HeaderAttachment {
-                    $Attachments.Add($Parameter.FilePath)
+                    foreach ($Attachment in  $Parameter.FilePath) {
+                        $Attachments.Add($Attachment)
+                    }
                 }
                 HeaderOptions {
                     $ServerParameters.DeliveryNotifications = $Parameter.DeliveryNotifications
