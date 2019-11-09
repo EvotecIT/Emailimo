@@ -38,6 +38,7 @@ Everything below is relavant with a change that what you see here is actually no
 
 - 0.0.11 - 2019.11.11
   - Emailimo has been moved to PSWriteHTML
+  - This is last release of Emailimo. It basically points to PSWRITEHTML making Emailimo, an empty module that just downloads PSWriteHTML. There is no need to download/install Emailimo. You can use Emailimo syntax straight from PSWriteHTML, just like you did before. Just make sure to update PSWriteHTML to newest version.
 
 - 0.0.10 - 2019.10.28
   - Fix for EmailAttachment
