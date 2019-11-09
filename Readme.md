@@ -21,7 +21,23 @@
 
 **Emailimo** is simplified **PowerShell** module allowing to send emails using english like syntax. It provides easy to use commands that allow you to sort of tyupe your email like you would in Outlook (to some extent - it's still **PowerShell** you know!). Emailimo is based on [PSWriteHTML](https://github.com/EvotecIT/PSWriteHTML).
 
+## IMPORTANT
+
+**Emailimo** project has been integrated back to [PSWriteHTML](https://github.com/EvotecIT/PSWriteHTML). This project is now **ARCHIVED**. Emailimo syntax and functionality will live as part of [PSWriteHTML](https://github.com/EvotecIT/PSWriteHTML).
+
+```PowerShell
+Uninstall-Module Emailimo -AllVersions
+Install-Module PSWriteHTML -Force
+```
+
+Everything below is relavant with a change that what you see here is actually now a functionality of **PSWriteHTML**. Leaving this for historical reasons. The reason for moving **Emailimo** to **PSWriteHTML** was that it was getting hard to keep both modules in sync, especially that 90% of features was identical with exception of sending emails. Emailimo features will be fully supported as part of **PSWriteHTML**. Hope to see you in that project.
+
+## ARCHIVE
+
 ## Changelog
+
+- 0.0.11 - 2019.11.11
+  - Emailimo has been moved to PSWriteHTML
 
 - 0.0.10 - 2019.10.28
   - Fix for EmailAttachment
